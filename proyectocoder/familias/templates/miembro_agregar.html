@@ -1,0 +1,6 @@
+<p>Agregando miembro a la familia {{ familia.apellido }}</p>
+<form method="post" action="{% url 'miembro_agregar' familia.pk %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Agregar miembro</button>
+</form>

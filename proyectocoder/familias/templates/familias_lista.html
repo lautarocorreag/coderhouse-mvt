@@ -1,0 +1,13 @@
+
+{% for familia in familias %}
+<p>Apellido: {{ familia.apellido }}</p>
+<ul>
+    {% for miembro in familia.miembros.all %}
+        <li>{{ miembro.nombre }} ({{ miembro.edad }} años) <a href="{% url 'miembro_eliminar' familia.pk miembro.pk %}">Eliminar</a></li>
+    {% endfor %}
+</ul>
+<a href="{% url 'miembro_agregar' familia.pk %}">Agregar miembro</a>
+{% endfor %}
+
+
+
